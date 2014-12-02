@@ -1,9 +1,21 @@
 Gamepad Plugin - 1.0.0
 =======================================
 
+##Todo:
+* Write 'How to use' documentation
+* onGamepadConnect and onGamepadDisconnect events
+* Add duration of button presses
+* Add debug feature
+* explain gamepad interface / button layout: 
+
 ##Description:
 
 This plugin brings the features of Gamepad.js to Kiwi.js
+
+Currently for more information and features look at the Gamepad.js documentation here: https://dvcs.w3.org/hg/gamepad/raw-file/default/gamepad.html
+
+This documentation also includes controller map / layout.
+
 
  
 
