@@ -1,4 +1,4 @@
-Gamepad Plugin for Kiwi.JS - 1.0.0
+Gamepad Plugin - 1.0.0
 =======================================
 
 ##Description:
