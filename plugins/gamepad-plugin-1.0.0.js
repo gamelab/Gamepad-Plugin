@@ -41,6 +41,19 @@ Kiwi.Plugins.Gamepad.Manager = function( game ) {
 
 	this.gamepads = gamepads;
 
+	this.gamepadConnected = new Kiwi.Signal();
+	this.gamepadDisconnected = new Kiwi.Signal();
+
+	var self = this;
+	window.addEventListener("gamepadconnected", function( event ) {
+		// console.log( 'connected' );
+		self.gamepadConnected.dispatch( event.gamepad );
+	});
+	window.addEventListener("gamepaddisconnected", function( event ) {
+		// console.log( 'disconnected' );
+		self.gamepadDisconnected.dispatch( event.gamepad);
+	});
+
 };
 
 /**

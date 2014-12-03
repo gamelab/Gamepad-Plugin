@@ -3,7 +3,6 @@ Gamepad Plugin - 1.0.0
 
 ##Todo:
 * Write 'How to use' documentation
-* onGamepadConnect and onGamepadDisconnect events
 * Add duration of button presses
 * Add debug feature
 * explain gamepad interface / button layout: 
