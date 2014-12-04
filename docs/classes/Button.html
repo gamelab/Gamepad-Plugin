@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Kiwi.Plugins.Gamepad - Gamepad-Plugin</title>
+    <title>Button - Gamepad-Plugin</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -41,9 +41,13 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/Kiwi.Plugins.Gamepad.html">Kiwi.Plugins.Gamepad</a></li>
+                <li><a href="../classes/Button.html">Button</a></li>
+            
+                <li><a href="../classes/Gamepad.html">Gamepad</a></li>
             
                 <li><a href="../classes/Manager.html">Manager</a></li>
+            
+                <li><a href="../classes/Thumbstick.html">Thumbstick</a></li>
             
             </ul>
 
@@ -52,6 +56,8 @@
                 <li><a href="../modules/Gamepad.html">Gamepad</a></li>
             
                 <li><a href="../modules/Kiwi.html">Kiwi</a></li>
+            
+                <li><a href="../modules/Kiwi.Plugins.html">Kiwi.Plugins</a></li>
             
                 <li><a href="../modules/Plugins.html">Plugins</a></li>
             
@@ -90,7 +96,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Kiwi.Plugins.Gamepad Class</h1>
+                        <h1>Button Class</h1>
 <div class="box meta">
     
 
@@ -98,14 +104,14 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l1"><code>plugins\gamepad-plugin-1.0.0.js:1</code></a>
+            Defined in: <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l279"><code>plugins&#x2F;gamepad-plugin-1.0.0.js:279</code></a>
         </div>
     
 
     
         
             Module: <a href="../modules/Gamepad.html">Gamepad</a><br>
-            Parent Module: <a href="../modules/Plugins.html">Plugins</a>
+            Parent Module: <a href="../modules/Kiwi.Plugins.html">Kiwi.Plugins</a>
         
     
 
@@ -115,90 +121,17 @@
 
 
 <div class="box intro">
-    <p>A Object that outlines the information related to this Gamepad Plugin. Aka the name and version of it.</p>
+    <p>The Button class is used to keep track of each button. Currently it only
+tracks index, value, and the pressed boolean. In future we are hoping to add 
+functionality such as duration and more</p>
 
 </div>
 
 
-
-<div id="classdocs" class="tabview">
-    <ul class="api-class-tabs">
-        <li class="api-class-tab index"><a href="#index">Index</a></li>
-
-        
-            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
-        
-        
-            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
-        
-        
-        
-    </ul>
-
-    <div>
-        <div id="index" class="api-class-tabpanel index">
-            <h2 class="off-left">Item Index</h2>
-
-            
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                        
-                            <li class="index-item method private">
-                                <a href="#method_create">create</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method private">
-                                <a href="#method_supportsGamepad">supportsGamepad</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                        
-                            <li class="index-item property public">
-                                <a href="#property_name">name</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_version">version</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                </div>
-            
-
-            
-
-            
-        </div>
-
-        
-            <div id="methods" class="api-class-tabpanel">
-                <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_create" class="method item private">
-    <h3 class="name"><code>create</code></h3>
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_Button" class="method item">
+    <h3 class="name"><code>Button</code></h3>
 
     
         <div class="args">
@@ -206,7 +139,19 @@
             
                 <li class="arg">
                     
-                        <code>game</code>
+                        <code>index</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[threshold]</code>
                     
                 </li>
             
@@ -218,8 +163,6 @@
 
     
 
-    
-        <span class="flag private">private</span>
     
 
     
@@ -234,8 +177,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Plugins.html">Plugins</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -243,7 +184,7 @@
             
         
         
-        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l28"><code>plugins\gamepad-plugin-1.0.0.js:28</code></a>
+        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l279"><code>plugins&#x2F;gamepad-plugin-1.0.0.js:279</code></a>
         
         </p>
 
@@ -265,14 +206,49 @@
             
                 <li class="param">
                     
-                        <code class="param-name">game</code>
-                        <span class="type">Kiwi.Game</span>
+                        <code class="param-name">index</code>
+                        <span class="type">Number</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The game that is current in the boot stage.</p>
+                        <p>Index of the button mapped out on the controller</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Name that we give the button, based on the Xbox 360 controller</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[threshold]</code>
+                        <span class="type">Number</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Between 0 - 1.
+    This sets the threshold that a button must exceed
+    before it is considered hit. Only works for triggers.</p>
 
                     </div>
 
@@ -288,9 +264,70 @@
     
 </div>
 
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method private">
+                                <a href="#method_isDown">isDown</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method_press">press</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method private">
+                                <a href="#method_release">release</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
                 
-                    <div id="method_supportsGamepad" class="method item private">
-    <h3 class="name"><code>supportsGamepad</code></h3>
+                    <div id="method_isDown" class="method item private">
+    <h3 class="name"><code>isDown</code></h3>
 
     
         <span class="paren">()</span>
@@ -316,8 +353,6 @@
         
             
                 
-                    <p>Provided by the <a href="../modules/Plugins.html">Plugins</a> module.</p>
-                
                 <p>
                 
                 Defined in
@@ -325,7 +360,7 @@
             
         
         
-        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l44"><code>plugins\gamepad-plugin-1.0.0.js:44</code></a>
+        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l327"><code>plugins&#x2F;gamepad-plugin-1.0.0.js:327</code></a>
         
         </p>
 
@@ -336,7 +371,121 @@
     </div>
 
     <div class="description">
-        <p>Checks to see if the current browser supports Gamepads</p>
+        <p>Switches the button to the isDown state</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_press" class="method item private">
+    <h3 class="name"><code>press</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l316"><code>plugins&#x2F;gamepad-plugin-1.0.0.js:316</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Switches the button to the press state</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_release" class="method item private">
+    <h3 class="name"><code>release</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l305"><code>plugins&#x2F;gamepad-plugin-1.0.0.js:305</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Switches the button to the released state</p>
 
     </div>
 
@@ -351,112 +500,6 @@
             </div>
         
 
-        
-            <div id="properties" class="api-class-tabpanel">
-                <h2 class="off-left">Properties</h2>
-
-                
-                    <div id="property_name" class="property item public">
-    <h3 class="name"><code>name</code></h3>
-    <span class="type">Unknown</span>
-
-    
-
-    
-        <span class="flag public">public</span>
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                    <p>Provided by the <a href="../modules/Plugins.html">Plugins</a> module.</p>
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l10"><code>plugins\gamepad-plugin-1.0.0.js:10</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The name of this plugin.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &#x27;Gamepad&#x27;</p>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_version" class="property item">
-    <h3 class="name"><code>version</code></h3>
-    <span class="type">Unknown</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                    <p>Provided by the <a href="../modules/Plugins.html">Plugins</a> module.</p>
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/plugins_gamepad-plugin-1.0.0.js.html#l17"><code>plugins\gamepad-plugin-1.0.0.js:17</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>The version of this plugin.</p>
-
-    </div>
-
-    
-        <p><strong>Default:</strong> &#x27;1.0.0&#x27;</p>
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
         
 
         
