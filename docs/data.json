@@ -1,0 +1,186 @@
+{
+    "project": {
+        "name": "Gamepad-Plugin",
+        "description": "Allows intergration of Gamepads with Kiwi.js",
+        "version": "1.0.0",
+        "url": "http://kiwijs.org/"
+    },
+    "files": {
+        "plugins\\gamepad-plugin-1.0.0.js": {
+            "name": "plugins\\gamepad-plugin-1.0.0.js",
+            "modules": {
+                "Plugins": 1,
+                "Gamepad": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.Gamepad": 1,
+                "Manager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1
+            }
+        }
+    },
+    "modules": {
+        "Kiwi": {
+            "name": "Kiwi",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1
+            }
+        },
+        "Plugins": {
+            "name": "Plugins",
+            "submodules": {
+                "Plugins": 1,
+                "Gamepad": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.Gamepad": 1,
+                "Manager": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "Kiwi.Plugins": 1
+            },
+            "module": "Plugins",
+            "namespace": "",
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 53,
+            "description": "A Object that outlines the information related to this Gamepad Plugin. Aka the name and version of it."
+        },
+        "Gamepad": {
+            "name": "Gamepad",
+            "submodules": {},
+            "classes": {
+                "Kiwi.Plugins.Gamepad": 1,
+                "Manager": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {},
+            "module": "Plugins",
+            "namespace": "",
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 53,
+            "description": "For more information look here: https://dvcs.w3.org/hg/gamepad/raw-file/default/gamepad.html",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "game",
+                    "description": "The kiwi game that this plugin will be added to.",
+                    "type": "Kiwi.Game"
+                }
+            ]
+        }
+    },
+    "classes": {
+        "Kiwi.Plugins.Gamepad": {
+            "name": "Kiwi.Plugins.Gamepad",
+            "shortname": "Kiwi.Plugins.Gamepad",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Plugins",
+            "submodule": "Gamepad",
+            "namespace": "Kiwi.Plugins",
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 1,
+            "description": "A Object that outlines the information related to this Gamepad Plugin. Aka the name and version of it."
+        },
+        "Manager": {
+            "name": "Manager",
+            "shortname": "Manager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Plugins",
+            "submodule": "Gamepad",
+            "namespace": "",
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 53,
+            "description": "For more information look here: https://dvcs.w3.org/hg/gamepad/raw-file/default/gamepad.html"
+        }
+    },
+    "classitems": [
+        {
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 10,
+            "description": "The name of this plugin.",
+            "itemtype": "property",
+            "name": "name",
+            "default": "'Gamepad'",
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Gamepad",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 17,
+            "description": "The version of this plugin.",
+            "itemtype": "property",
+            "name": "version",
+            "default": "'1.0.0'",
+            "class": "Kiwi.Plugins.Gamepad",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 28,
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "game",
+                    "description": "The game that is current in the boot stage.",
+                    "type": "Kiwi.Game"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Gamepad",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 44,
+            "description": "Checks to see if the current browser supports Gamepads",
+            "itemtype": "method",
+            "name": "supportsGamepad",
+            "access": "private",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Gamepad",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins"
+        },
+        {
+            "file": "plugins\\gamepad-plugin-1.0.0.js",
+            "line": 89,
+            "description": "THis method Updates all gamepads connected to computer.",
+            "itemtype": "method",
+            "name": "update",
+            "access": "private",
+            "tagname": "",
+            "class": "Manager",
+            "module": "Plugins",
+            "submodule": "Gamepad"
+        }
+    ],
+    "warnings": []
+}

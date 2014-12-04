@@ -1,3 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>plugins\gamepad-plugin-1.0.0.js - Gamepad-Plugin</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="Gamepad-Plugin"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Kiwi.Plugins.Gamepad.html">Kiwi.Plugins.Gamepad</a></li>
+            
+                <li><a href="../classes/Manager.html">Manager</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Gamepad.html">Gamepad</a></li>
+            
+                <li><a href="../modules/Kiwi.html">Kiwi</a></li>
+            
+                <li><a href="../modules/Plugins.html">Plugins</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: plugins\gamepad-plugin-1.0.0.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
 /**
 * A Object that outlines the information related to this Gamepad Plugin. Aka the name and version of it. 
 * 
@@ -10,17 +106,17 @@ Kiwi.Plugins.Gamepad = {
 	/**
     * The name of this plugin.
     * @property name
-    * @default 'Gamepad'
+    * @default &#x27;Gamepad&#x27;
     * @public
     */
-	name:'Gamepad',
+	name:&#x27;Gamepad&#x27;,
 	/**
     * The version of this plugin.
     * @property version
-    * @default '1.0.0'
+    * @default &#x27;1.0.0&#x27;
     */
-	version:'1.0.0',
-	minimumKiwiVersion: "1.0.0"
+	version:&#x27;1.0.0&#x27;,
+	minimumKiwiVersion: &quot;1.0.0&quot;
 };
 Kiwi.PluginManager.register(Kiwi.Plugins.Gamepad);
 
@@ -35,7 +131,7 @@ Kiwi.PluginManager.register(Kiwi.Plugins.Gamepad);
 Kiwi.Plugins.Gamepad.create = function( game ) {
 	var support = Kiwi.Plugins.Gamepad.supportsGamepad();
 	if( !support ) {
-		console.error ( "Your browser / platform does not support Gamepad Controllers" );
+		console.error ( &quot;Your browser / platform does not support Gamepad Controllers&quot; );
 	}
   game.gamepads = new Kiwi.Plugins.Gamepad.Manager( game );
   return game.gamepads;
@@ -47,7 +143,7 @@ Kiwi.Plugins.Gamepad.create = function( game ) {
 * @private 
 */
 Kiwi.Plugins.Gamepad.supportsGamepad = function() {
-	return "getGamepads" in navigator;
+	return &quot;getGamepads&quot; in navigator;
 };
 
 /**
@@ -64,7 +160,7 @@ Kiwi.Plugins.Gamepad.Manager = function( game ) {
 	var gamepads = [],
 		gamepadLength = navigator.getGamepads().length;
 
-	for (var i = gamepadLength - 1; i >= 0; i--) {
+	for (var i = gamepadLength - 1; i &gt;= 0; i--) {
 		var tempController = new Kiwi.Plugins.Gamepad.Controller( this, 0.25, 0.25 );
 		gamepads.push( tempController );
 	};
@@ -75,12 +171,12 @@ Kiwi.Plugins.Gamepad.Manager = function( game ) {
 	this.gamepadDisconnected = new Kiwi.Signal();
 
 	var self = this;
-	window.addEventListener("gamepadconnected", function( event ) {
-		// console.log( 'connected' );
+	window.addEventListener(&quot;gamepadconnected&quot;, function( event ) {
+		// console.log( &#x27;connected&#x27; );
 		self.gamepadConnected.dispatch( event.gamepad );
 	});
-	window.addEventListener("gamepaddisconnected", function( event ) {
-		// console.log( 'disconnected' );
+	window.addEventListener(&quot;gamepaddisconnected&quot;, function( event ) {
+		// console.log( &#x27;disconnected&#x27; );
 		self.gamepadDisconnected.dispatch( event.gamepad);
 	});
 
@@ -94,7 +190,7 @@ Kiwi.Plugins.Gamepad.Manager = function( game ) {
 Kiwi.Plugins.Gamepad.Manager.prototype.update = function( ) {
 	var gamepads = navigator.getGamepads();
 
-	for (var i = 0; i < gamepads.length; i++) {
+	for (var i = 0; i &lt; gamepads.length; i++) {
 		if(gamepads[i]){
 			this.gamepads[i].checkButtons( gamepads[i]);
 			this.gamepads[i].checkAxes( gamepads[i] );
@@ -153,28 +249,28 @@ Kiwi.Plugins.Gamepad.Controller = function ( parent, axesThreshold, triggerThres
 */
 Kiwi.Plugins.Gamepad.Controller.prototype.createButtons = function(){
 
-	this.button0 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_A');
-	this.button1 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_B');
-	this.button2 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_X');
-	this.button3 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_Y');
+	this.button0 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_A&#x27;);
+	this.button1 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_B&#x27;);
+	this.button2 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_X&#x27;);
+	this.button3 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_Y&#x27;);
 
-	this.button4 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_LEFT_BUMPER');
-	this.button5 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_RIGHT_BUMPER');
-	this.button6 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_LEFT_TRIGGER', 0.2);
-	this.button7 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_RIGHT_TRIGGER', 0.2);
+	this.button4 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_LEFT_BUMPER&#x27;);
+	this.button5 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_RIGHT_BUMPER&#x27;);
+	this.button6 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_LEFT_TRIGGER&#x27;, 0.2);
+	this.button7 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_RIGHT_TRIGGER&#x27;, 0.2);
 
-	this.button8 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_BACK');
-	this.button9 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_START');
+	this.button8 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_BACK&#x27;);
+	this.button9 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_START&#x27;);
 
-	this.button10 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_LEFT_STICK');
-	this.button11 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_RIGHT_STICK');
+	this.button10 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_LEFT_STICK&#x27;);
+	this.button11 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_RIGHT_STICK&#x27;);
 
-	this.button12 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_DPAD_UP');
-	this.button13 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_DPAD_DOWN');
-	this.button14 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_DPAD_LEFT');
-	this.button15 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_DPAD_RIGHT');
+	this.button12 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_DPAD_UP&#x27;);
+	this.button13 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_DPAD_DOWN&#x27;);
+	this.button14 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_DPAD_LEFT&#x27;);
+	this.button15 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_DPAD_RIGHT&#x27;);
 
-	// this.button16 = new Kiwi.Plugins.Gamepad.Button( 0, 'XBOX_MIDDLE_BUTTON');
+	// this.button16 = new Kiwi.Plugins.Gamepad.Button( 0, &#x27;XBOX_MIDDLE_BUTTON&#x27;);
 
 	this.rightButtons = [ this.button0, this.button1, this.button2, this.button3 ];
 	this.bumpers = [ this.button4, this.button5 ];
@@ -196,10 +292,10 @@ Kiwi.Plugins.Gamepad.Controller.prototype.createButtons = function(){
 * @private
 */
 Kiwi.Plugins.Gamepad.Controller.prototype.createAxes = function(){
-	this.axis0 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, 'XBOX_LEFT_HORZ', 0.1);
-	this.axis1 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, 'XBOX_LEFT_VERT', 0.1);
-	this.axis2 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, 'XBOX_RIGHT_HORZ', 0.1);
-	this.axis3 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, 'XBOX_RIGHT_VERT', 0.1);
+	this.axis0 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, &#x27;XBOX_LEFT_HORZ&#x27;, 0.1);
+	this.axis1 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, &#x27;XBOX_LEFT_VERT&#x27;, 0.1);
+	this.axis2 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, &#x27;XBOX_RIGHT_HORZ&#x27;, 0.1);
+	this.axis3 = new Kiwi.Plugins.Gamepad.Thumbstick( 0, &#x27;XBOX_RIGHT_VERT&#x27;, 0.1);
 
 	this.axes = [ this.axis0, this.axis1, this.axis2, this.axis3 ];
 	this.leftAxis = [ this.axis0, this.axis1 ];
@@ -212,7 +308,7 @@ Kiwi.Plugins.Gamepad.Controller.prototype.createAxes = function(){
 * @private
 */
 Kiwi.Plugins.Gamepad.Controller.prototype.checkButtons = function( gamepad ){
-	for (var i = this.buttons.length - 1; i >= 0; i--) {
+	for (var i = this.buttons.length - 1; i &gt;= 0; i--) {
 		if(this.buttons[ i ].pressed ===  gamepad.buttons[ i ].pressed ){
 			if( this.buttons[ i ].pressed === true ){
 				this.buttons[ i ].isDown( gamepad.buttons[ i ] );
@@ -238,9 +334,9 @@ Kiwi.Plugins.Gamepad.Controller.prototype.checkButtons = function( gamepad ){
 * @private
 */
 Kiwi.Plugins.Gamepad.Controller.prototype.checkAxes = function( gamepad ){
-	for (var i = this.axes.length - 1; i >= 0; i--) {
-		if( Math.abs( this.axes[ i ].value ) > this.threshold &&  Math.abs( gamepad.axes[ i ] ) > this.threshold ){
-			if( Math.abs( this.axes[ i ].value ) > this.threshold ){
+	for (var i = this.axes.length - 1; i &gt;= 0; i--) {
+		if( Math.abs( this.axes[ i ].value ) &gt; this.threshold &amp;&amp;  Math.abs( gamepad.axes[ i ] ) &gt; this.threshold ){
+			if( Math.abs( this.axes[ i ].value ) &gt; this.threshold ){
 				////////////////////
 				//FIRE IS DOWN SIGNAL
 				this.axes[ i ].isDown( gamepad.axes[ i ] );
@@ -248,14 +344,14 @@ Kiwi.Plugins.Gamepad.Controller.prototype.checkAxes = function( gamepad ){
 				this.thumbstickIsDown.dispatch( this.axes[ i ] );
 
 			}
-		} else if( Math.abs( this.axes[ i ].value ) > this.threshold ||  Math.abs( gamepad.axes[ i ] ) > this.threshold ) {
-			if(  Math.abs( this.axes[ i ].value ) > this.threshold ){
+		} else if( Math.abs( this.axes[ i ].value ) &gt; this.threshold ||  Math.abs( gamepad.axes[ i ] ) &gt; this.threshold ) {
+			if(  Math.abs( this.axes[ i ].value ) &gt; this.threshold ){
 				this.axes[ i ].press( gamepad.axes[ i ] );
 
 				this.thumbstickIsDown.dispatch( this.axes[ i ] );
 				this.thumbstickOnDownOnce.dispatch( this.axes[ i ] );
 
-			} else if(  Math.abs( this.axes[ i ].value ) < this.threshold ){
+			} else if(  Math.abs( this.axes[ i ].value ) &lt; this.threshold ){
 				this.axes[ i ].release();
 				this.thumbstickOnUp.dispatch( this.axes[ i ] );
 			}
@@ -371,3 +467,23 @@ Kiwi.Plugins.Gamepad.Thumbstick.prototype.press = function ( axis ) {
 Kiwi.Plugins.Gamepad.Thumbstick.prototype.isDown = function ( axis ) {
 	this.value = axis;
 };
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
