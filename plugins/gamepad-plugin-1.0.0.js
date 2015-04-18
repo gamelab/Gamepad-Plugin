@@ -87,10 +87,31 @@ Kiwi.Plugins.Gamepad.Manager = function( game ) {
 	var self = this;
 	window.addEventListener("gamepadconnected", function( event ) {
 		// console.log( "connected" );
+
+		//	If a new controller has just been connected:
+		//	update the gamepad array
+		var newLength = navigator.getGamepads().length;
+		if(gamepadLength < newLength)
+		{
+			while(newLength > gamepadLength)
+			{
+				self.gamepads.push(new Kiwi.Plugins.Gamepad.Controller( this, 0.25, 0.25 ));
+				gamepadLength++;
+			}
+		}
+		//console.log(self.gamepads);
+
 		self.gamepadConnected.dispatch( event.gamepad );
 	});
 	window.addEventListener("gamepaddisconnected", function( event ) {
 		// console.log( "disconnected" );
+
+		//	Remove deconnected controller from the gamepad array
+		var gamepadIndex = self.gamepads.indexOf(event.gamepad);
+		self.gamepads.splice(gamepadIndex);
+		gamepadLength--;
+		//console.log("Controller : " + event.gamepad + " disconnected.");
+
 		self.gamepadDisconnected.dispatch( event.gamepad);
 	});
 
