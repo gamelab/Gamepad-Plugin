@@ -1,12 +1,6 @@
 Gamepad Plugin - 1.0.0
 =======================================
 
-##Todo
-* Write 'How to use' documentation
-* Add duration of button presses
-* Add debug feature
-* Explain gamepad interface / button layout: 
-
 ##Description
 
 This plugin brings the features of Gamepad.js to Kiwi.js.
@@ -47,9 +41,8 @@ Make sure that you also pass the names of other plugins that you want to use.
 Your game should now have access to the plugin.
 
 ##How to use
-TODO
 
-###TODO: How to use plugin
+###How to use plugin
 
 **Currently not written**
 
@@ -60,3 +53,9 @@ Further examples can be found in the `examples` folder of this repo.
 
 ##Thanks
 If you have further questions, suggestions, or find any issues with the plugin, don't hesitate to contact us at [KiwiJS.](http:www.kiwijs.org)
+
+##Todo
+* Write 'How to use' documentation
+* Add duration of button presses
+* Add debug feature
+* Explain gamepad interface / button layout
